@@ -1,0 +1,179 @@
+/* Top nav */
+#top-nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  background-color: var(--gray2);
+  color: var(--blue);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#system-name {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+#date-time {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.user-welcome {
+  display: flex;
+  align-items: center;
+}
+
+.user-welcome span {
+  margin-right: 10px;
+}
+
+.user {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Left nav */
+#container {
+  flex-grow: 1;
+  display: flex;
+}
+/* ------------left nav----------- */
+#left-nav {
+  position: fixed;
+  /* width: 250px; */
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow-y: auto;
+  margin-top: 60px;
+  font-size: 1.25rem;
+  width: 220px;
+  background-color: var(--blue);
+  color: #fff;
+  padding: 35px;
+}
+
+#left-nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+#left-nav li {
+  margin-bottom: 30px;
+}
+
+#left-nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Content box */
+#content {
+  margin-top: 60px;
+  margin-left: 220px;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  #left-nav {
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    left: -100%;
+    height: auto;
+    overflow-y: auto;
+
+    margin-top: 0;
+    transition: left 0.9s;
+  }
+
+
+  #left-nav.active {
+    left: 0;
+  }
+
+  #content {
+    margin-top: 60px;
+    margin-left: 0;
+  }
+}
+
+/* responsiveness for screens up to 720px */
+
+@media (max-width: 480px) {
+  #top-nav {
+    padding: 5px;
+  }
+
+  #system-name {
+    font-size: 1.5rem;
+  }
+
+  #date-time {
+    font-size: 14px;
+  }
+
+  .user-welcome span {
+    font-size: 14px;
+  }
+
+  .user {
+    width: 30px;
+    height: 30px;
+  }
+
+  .user img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #left-nav {
+    width: 220px; /* Set the initial width of the side navigation bar */
+    padding: 20px;
+    overflow-x: hidden; /* Hide horizontal overflow content */
+    transition: 0.3s; /* Add a smooth transition effect */
+  }
+
+  #left-nav ul {
+    margin-left: 0;
+  }
+
+  #left-nav li {
+    margin-bottom: 20px;
+  }
+
+  #left-nav.hidden {
+    width: 0;
+  }
+}
+
+
+/* Style for active links in the sidebar */
+#left-nav a.active {
+  background-color: var(--white); 
+  color: var(--blue); 
+  width: 200%;
+  width: 220px;
+  border-right: 4px solid var(--blue); 
+  font-weight: bold; 
+}
+

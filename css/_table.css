@@ -1,0 +1,368 @@
+/* -------------------- TABLE OUTER BOX ----------------------------------- */
+main.tableRec {
+  padding: 5px;
+  height: 97vh;
+  background-color: var(--gray);
+  backdrop-filter: blur(7px);
+  box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.205);
+  overflow: hidden;
+}
+
+/* -------------------------------- TABLE HEADER CLASS ------------------------------------- */
+.table__header {
+  width: 100%;
+  height: 10%;
+  background-color: var(--blue);
+  color: var(--white);
+  padding: .8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --------------- searchbar ------------- */
+.table__header .input-group {
+  width: 35%;
+  height: 100%;
+  background-color: #eeecec;
+  padding: 0 .8rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+}
+
+.table__header .input-group:hover {
+  background-color: var(--white);
+  box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group ion-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.table__header .input-group input {
+  width: 100%;
+  padding: 0 .5rem 0 .3rem;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+/* -------------------------------- TABLE BODY CLASS ---------------------------------------------- */
+.table__body {
+  width: 100%;
+  max-height: calc(89% - 1.6rem);
+  background-color: var(--gray);
+  margin: .8rem auto;
+  overflow: auto;
+  overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+  border-radius: .5rem;
+  background-color: #0004;
+}
+
+/* ======================= Styling data ====================================== */
+table {
+  width: 100%;
+}
+
+td img {
+  width: 36px;
+  height: 36px;
+  margin-right: .5rem;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 1rem;
+}
+
+thead, tfoot th {
+  /* position: sticky; */
+  top: 0;
+  left: 0;
+  background-color: var(--black2);
+  cursor: pointer;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+/* //////////////////////////////// */
+
+tbody tr:nth-child(even) {
+  background-color: #0000000b;
+}
+
+tbody tr {
+  --delay: .1s;
+  transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+tbody tr td,
+tbody tr td p,
+tbody tr td img {
+  transition: .2s ease-in-out;
+}
+
+tbody tr.hide td,
+tbody tr.hide td p {
+  padding: 0;
+  font: 0 / 0 sans-serif;
+  transition: .2s ease-in-out .5s;
+}
+
+tbody tr.hide td img {
+  width: 0;
+  height: 0;
+  transition: .2s ease-in-out .5s;
+}
+
+@media (max-width: 1000px) {
+  td:not(:first-of-type) {
+    min-width: 12.1rem;
+  }
+}
+
+thead th span.icon-arrow {
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  border: 1.4px solid transparent;
+  text-align: center;
+  font-size: 1rem;
+  margin-left: .5rem;
+  transition: .2s ease-in-out;
+}
+
+thead th:hover span.icon-arrow {
+  border: 1.4px solid #6c00bd;
+}
+
+thead th:hover {
+  color: #6c00bd;
+}
+
+thead th.active span.icon-arrow {
+  background-color: #6c00bd;
+  color: #fff;
+}
+
+thead th.asc span.icon-arrow {
+  transform: rotate(180deg);
+}
+
+thead th.active,
+tbody td.active {
+  color: #6c00bd;
+}
+
+
+
+
+
+/* ============================================== */
+
+.tableRec{
+    margin-top: 5vh;
+}
+button #scrollButton{
+    align-items: center;
+}
+.salesBooth {
+    background-color: var(--gray);
+    
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem rgba(0, 0, 0, 0.205);
+
+    /* margin: 0 auto; 
+    padding: 5px;
+    width: 800px; */
+}
+
+.salesBooth h1 {
+    text-align: center;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 24px;
+    margin-bottom: 20px;
+
+}
+form {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .salesBooth {
+        padding: 10px; 
+    }
+    
+    h1 {
+        font-size: 20px; 
+    }
+}
+
+th, label {
+    color: var(--black1);
+}
+
+
+#salesTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+#salesTable th,
+#salesTable td {
+    padding: 10px;
+    border: 1px solid var(--black2);
+}
+
+#salesTable th {
+    background-color: var(--gray);
+}
+
+#salesTable input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--black2); 
+    border-radius: 5px;
+    background-color: var(--gray);
+}
+
+#salesTable input[type="total"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--black2); 
+    border-radius: 5px;
+    background-color: var(--gray);
+}
+
+#salesTable button {
+    width: 100%;
+    padding: 8px;
+    background-color: var(--blue); 
+    color: var(--white); 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+#customer {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#customer td {
+    padding: 10px;
+    border: 1px solid var(--black2);
+}
+
+#customer input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--black2); 
+    border-radius: 5px;
+    background-color: var(--gray); 
+}
+
+#sales_update {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--blue); 
+    color: var(--white); 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#sales_update:hover {
+    background-color: #0056b3; 
+}
+
+#sales_update:focus {
+    outline: none;
+}
+#salesTable button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+/* ---------------purchases---------- */
+
+
+#purchasesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+#purchasesTable th,
+#purchasesTable td {
+  padding: 10px;
+  border: 1px solid var(--black2);
+}
+
+#purchasesTable th {
+  background-color: var(--gray);
+}
+
+#purchasesTable input[type="text"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid var(--black2); 
+  border-radius: 5px;
+  background-color: var(--gray);
+}
+
+#purchasesTable input[type="total"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid var(--black2); 
+  border-radius: 5px;
+  background-color: var(--gray);
+}
+
+#purchasesTable button {
+  width: 100%;
+  padding: 8px;
+  background-color: var(--blue); 
+  color: var(--white); 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#purchasesTable button:hover {
+  background-color: #0056b3;
+}
